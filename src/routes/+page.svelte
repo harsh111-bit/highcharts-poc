@@ -221,4 +221,23 @@
 		max-width: 1200px;
 		margin: 0 auto;
 	}
+
+	:global(.highcharts-drilldown-data-label text),
+	:global(.highcharts-drilldown-axis-label),
+	:global(.highcharts-label a),
+	:global(.highcharts-breadcrumbs-button text) {
+		color: #ea580c !important; /* Orange color */
+		fill: #ea580c !important;
+	}
+
+	:global(.highcharts-label a:hover),
+	:global(.highcharts-breadcrumbs-button:hover) {
+		color: #fb923c !important; /* Slightly lighter orange for hover state */
+		fill: #fb923c !important;
+	}
+
+	:global(.highcharts-breadcrumbs-button .highcharts-button-box) {
+		/* Added this */
+		fill: transparent;
+	}
 </style>
