@@ -14,6 +14,7 @@
 	});
 
 	let options = {
+		styledMode: true,
 		chart: {
 			type: 'line',
 			reflow: true,
@@ -61,6 +62,12 @@
 					enabled: true,
 					format: '{point.y:.1f}'
 				}
+			},
+			column: {
+				// Add column specific options
+				borderRadius: 4, // Optional: adds rounded corners
+				pointWidth: 32, // Controls the width of columns
+				color: '#94a3b8' // Orange color for columns
 			}
 		},
 		series: [
@@ -209,7 +216,7 @@
 </script>
 
 {#if Chart}
-	<div class="chart-container">
+	<div class="chart-container text-slate-400">
 		<Chart {options} highcharts={Highcharts} />
 	</div>
 {/if}
@@ -217,17 +224,17 @@
 <style>
 	.chart-container {
 		width: 100%;
-		min-height: 400px;
-		max-width: 1200px;
-		margin: 0 auto;
+		height: 300px !important;
+		max-width: 600px;
 	}
 
 	:global(.highcharts-drilldown-data-label text),
 	:global(.highcharts-drilldown-axis-label),
 	:global(.highcharts-label a),
 	:global(.highcharts-breadcrumbs-button text) {
-		color: #ea580c !important; /* Orange color */
-		fill: #ea580c !important;
+		color: #94a3b8 !important; /* Orange color */
+		fill: #94a3b8 !important;
+		text-decoration: none !important;
 	}
 
 	:global(.highcharts-label a:hover),
